@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import '../styles/sidebar.scss';
 
 import { Button } from './Button';
@@ -14,7 +15,7 @@ interface SidebarProps {
   handleClickButton: (id: number) => void
 }
 
-export function SideBar({ genres, selectedGenreId, handleClickButton }: SidebarProps) {
+function SideBarComponent({ genres, selectedGenreId, handleClickButton }: SidebarProps) {
   return (
       <nav className="sidebar">
         <span>Watch<p>Me</p></span>
@@ -33,3 +34,5 @@ export function SideBar({ genres, selectedGenreId, handleClickButton }: SidebarP
       </nav>
   )
 }
+
+export const SideBar = memo(SideBarComponent)
